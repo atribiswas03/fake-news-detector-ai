@@ -1,9 +1,7 @@
 services:
   - type: web
     name: fake-news-detector
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn Home:app
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.10.13
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
