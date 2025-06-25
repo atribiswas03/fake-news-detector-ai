@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: fake-news-detector
-    env: docker
-    plan: free
-    dockerfilePath: ./Dockerfile
