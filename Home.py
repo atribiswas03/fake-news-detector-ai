@@ -99,8 +99,6 @@ def admin_login():
         # Generate OTP
         otp_code = ''.join(random.choices(string.ascii_letters + string.digits, k=6))
 
-        logo_url = url_for('static', filename='Images/Logo.png', _external=True)
-
         html_body = f"""
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 10px;">
             <div style="text-align: center;">
