@@ -104,7 +104,7 @@ def admin_login():
         html_body = f"""
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 10px;">
             <div style="text-align: center;">
-                <img src="{logo_url}" alt="Fake News Detector Logo" style="max-width: 120px; margin-bottom: 20px;">
+                <img src="https://lh3.googleusercontent.com/d/1axKWatF3vfJIKIWk2aed6sDxkMY-dG4M" alt="Fake News Detector Logo" style="max-width: 120px; margin-bottom: 20px;">
                 <h2 style="color: #2c3e50;">Admin OTP Verification</h2>
             </div>
             <p>Hello Admin,</p>
