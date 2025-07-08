@@ -1,138 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fake News Detector</title>
-  <link rel="icon" href="{{ url_for('static', filename='Images/Logo.png') }}" type="image/x-icon">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: white;
-      text-align: center;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake News Detector</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='Images/Logo.png') }}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='CSS/F_News.css') }}"
+    />
+  </head>
+  <body>
+    <div class="content">
+      <div class="fancy-heading">
+        <span class="text">HOW TO SPOT FAKE NEWS ?</span>
+        <span class="icon">🔍</span>
+      </div>
 
-    .content {
-      padding-top: 60px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px black;
-    }
-
-    p {
-      font-size: 1.5rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      text-shadow: 1px 1px 3px black;
-    }
-
-    a {
-      margin-top: 1rem;
-      padding: 10px 20px;
-      background-color:rgb(86, 39, 129);
-      color:rgb(233, 233, 233);
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-      display: inline-block;
-    }
-
-    a:hover {
-      background-color: #e0e0e0;
-      color:rgb(87, 7, 124);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .grid img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: fit;
-      border-radius: 10px;
-      border: 3px solid white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-      transition: transform 0.3s;
-    }
-
-    .grid img:hover {
-      transform: scale(1.2);
-      cursor: pointer;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      p { font-size: 1rem; }
-    }
-    .fancy-heading {
-      text-align: center;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      font-size: 36px;
-      font-weight: bold;
-      color: #8a2be2;
-      letter-spacing: 2px;
-      margin-top: 30px;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .fancy-heading .icon {
-      font-size: 40px;
-      margin-right: 10px;
-      animation: bounce 1s infinite alternate;
-    }
-    
-    @keyframes bounce {
-      from {
-        transform: translateY(0px);
-      }
-      to {
-        transform: translateY(-5px);
-      }
-    }
-    
-  </style>
-</head>
-<body>
-  <div class="content">
-    <div class="fancy-heading">
-      <span class="text">HOW TO SPOT FAKE NEWS ?</span>
-      <span class="icon">🔍</span>
+      <!-- 🔲 Grid of Square Images -->
+      <div class="grid">
+        <img
+          src="{{ url_for('static', filename='Images/F_News/01.png') }}"
+          alt="img1"
+        />
+        <img
+          src="{{ url_for('static', filename='Images/F_News/02.png') }}"
+          alt="img2"
+        />
+        <img
+          src="{{ url_for('static', filename='Images/F_News/03.png') }}"
+          alt="img3"
+        />
+        <img
+          src="{{ url_for('static', filename='Images/F_News/04.png') }}"
+          alt="img4"
+        />
+        <img
+          src="{{ url_for('static', filename='Images/F_News/05.png') }}"
+          alt="img5"
+        />
+        <img
+          src="{{ url_for('static', filename='Images/F_News/06.png') }}"
+          alt="img6"
+        />
+        <img
+          src="{{ url_for('static', filename='Images/F_News/07.png') }}"
+          alt="img7"
+        />
+        <img
+          src="{{ url_for('static', filename='Images/F_News/08.png') }}"
+          alt="img8"
+        />
+      </div>
+      <a href="/"><span>&#128072;&#127995;</span> Go Back to Home</a>
     </div>
-    
-    
-
-    <!-- 🔲 Grid of Square Images -->
-    <div class="grid">
-      <img src="{{ url_for('static', filename='Images/F_News/01.png') }}" alt="img1" />
-      <img src="{{ url_for('static', filename='Images/F_News/02.png') }}" alt="img2" />
-      <img src="{{ url_for('static', filename='Images/F_News/03.png') }}" alt="img3" />
-      <img src="{{ url_for('static', filename='Images/F_News/04.png') }}" alt="img4" />
-      <img src="{{ url_for('static', filename='Images/F_News/05.png') }}" alt="img5" />
-      <img src="{{ url_for('static', filename='Images/F_News/06.png') }}" alt="img6" />
-      <img src="{{ url_for('static', filename='Images/F_News/07.png') }}" alt="img7" />
-      <img src="{{ url_for('static', filename='Images/F_News/08.png') }}" alt="img8" />
-    </div>
-    <a href="/"><span>&#128072;&#127995;</span> Go Back to Home</a>
-  </div>
-</body>
+  </body>
 </html>

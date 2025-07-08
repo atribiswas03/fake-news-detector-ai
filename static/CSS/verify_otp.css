@@ -1,0 +1,276 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.modal-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0);
+    position: relative;
+    z-index: 1;
+}
+
+form {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    z-index: 2;
+    width: 90%;
+    max-width: 400px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: rgb(88, 0, 96);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: transparent;
+    animation: glowInput 3s ease-in-out infinite alternate;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.34);
+}
+
+@keyframes glowInput {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.super-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+.super-button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, #00ffff, #ff00ff, #00ffff);
+    animation: rotate 3s linear infinite;
+    z-index: -2;
+}
+
+.super-button::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: rgb(15, 16, 16);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.super-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+.arrow {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s ease-in-out;
+    color: #00ffff;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* Firefly styles */
+.firefly {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(#fff800, #ffcc00, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fly 15s infinite ease-in-out alternate;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+
+    25% {
+        transform: translate(50px, -60px) scale(1.2);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translate(-80px, 40px) scale(1.4);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translate(60px, 90px) scale(1.1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.6;
+    }
+}
+
+.firefly:nth-child(1) {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.firefly:nth-child(2) {
+    top: 20%;
+    left: 90%;
+    animation-delay: 2s;
+}
+
+.firefly:nth-child(3) {
+    top: 30%;
+    left: 30%;
+    animation-delay: 3s;
+}
+
+.firefly:nth-child(4) {
+    top: 40%;
+    left: 60%;
+    animation-delay: 1.5s;
+}
+
+.firefly:nth-child(5) {
+    top: 60%;
+    left: 15%;
+    animation-delay: 4s;
+}
+
+.firefly:nth-child(6) {
+    top: 70%;
+    left: 70%;
+    animation-delay: 5s;
+}
+
+.firefly:nth-child(7) {
+    top: 80%;
+    left: 45%;
+    animation-delay: 3.5s;
+}
+
+.firefly:nth-child(8) {
+    top: 90%;
+    left: 85%;
+    animation-delay: 6s;
+}
+
+.firefly:nth-child(9) {
+    top: 50%;
+    left: 10%;
+    animation-delay: 2.5s;
+}
+
+.firefly:nth-child(10) {
+    top: 5%;
+    left: 95%;
+    animation-delay: 1s;
+}
+
+/* Send animation */
+.dots {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    background-color: #00ffff;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: bold;
+    border-radius: 15px;
+}

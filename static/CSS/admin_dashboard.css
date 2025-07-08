@@ -1,0 +1,536 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 95%;
+    margin: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    text-align: left;
+    text-align: center;
+}
+
+th {
+    background-color: #0066cc;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e6f2ff;
+}
+
+td {
+    color: #333;
+    border: 1px solid rgba(131, 190, 235, 0.65);
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-top: 40px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px 30px;
+}
+
+.header-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+    color: white;
+}
+
+.logout_btn {
+    background-color: rgba(143, 60, 60, 0.44);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    right: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logout_btn:hover {
+    background-color: rgba(234, 30, 30, 0.64);
+    box-shadow: 0 0 10px rgba(117, 3, 3, 0.8);
+    color: rgb(255, 255, 255);
+}
+
+.table-btn-Approve {
+    background-color: rgba(66, 151, 13, 0.85);
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table-btn-Approve:hover {
+    background-color: rgb(6, 146, 90);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.table-btn-Reject {
+    background-color: darkred;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table-btn-Reject:hover {
+    background-color: #b30000;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.table-btn {
+    background-color: rgba(242, 3, 3, 0.99);
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table-btn:hover {
+    background-color: rgb(47, 3, 3);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-image: linear-gradient(to right top, #853a64, #8d5a85, #9579a1, #a096b7, #b1b3c9, #b7bed2, #bfc9da, #c7d4e2, #bad2e6, #abd1e9, #9ad1eb, #86d0eb);
+    margin: 8% auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.modal-header {
+    position: relative;
+    padding: 10px;
+    background: rgba(7, 3, 59, 0.7);
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.modal-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.modal-button:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+.yes-button {
+    background-color: crimson;
+    color: white;
+    margin-right: 60px;
+}
+
+.no-button {
+    background-color: gray;
+    color: white;
+}
+
+header {
+    text-align: center;
+    color: white;
+    padding: 2px;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(315deg, rgba(101, 0, 94, 1) 3%, rgba(60, 132, 206, 1) 38%, rgba(48, 238, 226, 1) 68%, rgba(255, 25, 25, 1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave-header {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: absolute;
+    width: 200%;
+    height: 4em;
+    transform: translate3d(0, 0, 0);
+    bottom: -1px;
+    left: 0;
+    z-index: 5;
+}
+
+#wave1 {
+    animation: wave 10s -3s linear infinite;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+#wave2 {
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+    bottom: -1.25em;
+    z-index: -2;
+}
+
+#wave3 {
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+    bottom: -2.5em;
+    z-index: -3;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+
+.modal-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.admin-modal {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    width: 90%;
+    max-width: 500px;
+    color: white;
+}
+
+.admin-modal h3 {
+    margin-bottom: 20px;
+    color: #00ffff;
+}
+
+.admin-modal input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: transparent;
+    animation: glowInput 3s ease-in-out infinite alternate;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.34);
+    color: white;
+}
+
+@keyframes glowInput {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.super-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+.super-button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, #00ffff, #ff00ff, #00ffff);
+    animation: rotate 3s linear infinite;
+    z-index: -2;
+}
+
+.super-button::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: rgb(15, 16, 16);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.firefly {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(#fff800, #ffcc00, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fly 15s infinite ease-in-out alternate;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+
+    25% {
+        transform: translate(50px, -60px) scale(1.2);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translate(-80px, 40px) scale(1.4);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translate(60px, 90px) scale(1.1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.6;
+    }
+}
+
+.firefly:nth-child(1) {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.firefly:nth-child(2) {
+    top: 20%;
+    left: 90%;
+    animation-delay: 2s;
+}
+
+.firefly:nth-child(3) {
+    top: 30%;
+    left: 30%;
+    animation-delay: 3s;
+}
+
+.firefly:nth-child(4) {
+    top: 40%;
+    left: 60%;
+    animation-delay: 1.5s;
+}
+
+.firefly:nth-child(5) {
+    top: 60%;
+    left: 15%;
+    animation-delay: 4s;
+}
+
+.firefly:nth-child(6) {
+    top: 70%;
+    left: 70%;
+    animation-delay: 5s;
+}
+
+.firefly:nth-child(7) {
+    top: 80%;
+    left: 45%;
+    animation-delay: 3.5s;
+}
+
+.firefly:nth-child(8) {
+    top: 90%;
+    left: 85%;
+    animation-delay: 6s;
+}
+
+.firefly:nth-child(9) {
+    top: 50%;
+    left: 10%;
+    animation-delay: 2.5s;
+}
+
+.firefly:nth-child(10) {
+    top: 5%;
+    left: 95%;
+    animation-delay: 1s;
+}
+
+
+.add_admin_btn {
+    background-color: rgb(2, 95, 78);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add_admin_btn:hover {
+    background-color: rgba(4, 100, 92, 0.94);
+    box-shadow: 0 0 10px rgba(9, 99, 97, 0.8);
+    color: rgb(255, 255, 255);
+}
+
+.delete_all_btn {
+    background-color: rgb(149, 3, 3);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.delete_all_btn:hover {
+    background-color: rgba(0, 0, 0, 0.94);
+    box-shadow: 0 0 10px rgba(99, 19, 9, 0.8);
+    color: rgb(250, 13, 13);
+}
